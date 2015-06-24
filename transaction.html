@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>My Budget App</title>
+    <link href='css/bootstrap.css' rel='stylesheet'>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  </head>
+  <body>
+
+    <!--The Nav Bar-->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><b>My</b>Budget</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--the rest of the body-->
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" >
+        <ul class="nav nav-sidebar">
+          <li><a href="#">Overview</a></li>
+          <li class="active"><a href="budget.html">Budgets</a></li>
+          <li><a href="transaction.html">Transactions</a></li>
+          <li><a href="accounts.html">Accounts</a></li>
+        </ul>
+      </div>
+     
+      
+       
+        <div><h3>Transaction Information<h3></div>
+        <div class="col-md-4">
+           <form role="form">
+            <div class="form-group">
+              <label for="transaction-date">Transaction Date</label>
+              <input type="month" class="form-control" id="transaction-date" placeholder="Select budget month"/>
+              <label for="payee">Payee</label>
+              <input type="text" class="form-control" id="payee" placeholder="Enter payee name"/> 
+              <label for="transaction-amount">Transaction Amount</label>
+              <input type="number" class="form-control" id="transaction-amount" placeholder="Enter transaction amount"/> 
+              <label for="transaction-type">Budget Category</label>
+              <select class="form-control" id="transaction-type" placeholder="Choose an account type">
+                <option value="food_dining">Food and Dining</option>
+                <option value="groceries">Groceries</option>
+                <option value="car_auto">Car and Auto</option>
+                <option value="lending">Lending</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="cellphone">Cellphone</option>
+                <option value="utilities">Utilities</option>
+                <option value="kids">Kids</option>
+                <option value="transportation">Transportation</option>
+              </select> 
+              <label for="transaction-desc">Transaction Description</label>
+              <input type="text" class="form-control" id="transaction-desc" placeholder="Enter payee name"/>
+              
+            </div>            
+              <div>
+                <button type="button" class="btn btn-default">Save</button>
+            </div>
+          </form> 
+        </div>
+      </div>
+    
+  </body>
+  <script>
+    var myDataRef = new Firebase('https://nhb1hkkhpli.firebaseio-demo.com/');
+  </script>
+</html>

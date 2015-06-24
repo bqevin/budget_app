@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>My Budget App</title>
+    <link href='css/bootstrap.css' rel='stylesheet'>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+  </head>
+  <body>
+
+    <!--The Nav Bar-->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><b>My</b>Budget</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--the rest of the body-->
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" >
+        <ul class="nav nav-sidebar">
+          <li><a href="#">Overview</a></li>
+          <li class="active"><a href="budget.html">Budgets</a></li>
+          <li><a href="transaction.html">Transactions</a></li>
+          <li><a href="accounts.html">Accounts</a></li>
+        </ul>
+      </div>
+     
+      
+       
+        <div><h3>Budget Information<h3></div>
+        <div class="col-md-4">
+           <form role="form">
+            <div class="form-group">
+              <label for="account-type">Take from account</label>
+              <select class="form-control" id="account-type">
+                <option value="cash">Cash</option>
+                <option value="credit-card">Card</option>
+              </select> 
+              <label for="budgdet-month">Budget Month</label>
+              <input type="month" class="form-control" id="budget-month" placeholder="Select budget month"/>
+              <label for="budget-type">Budget Category</label>
+              <select class="form-control" id="budget-type" placeholder="Choose an account type">
+                <option value="food_dining">Food and Dining</option>
+                <option value="groceries">Groceries</option>
+                <option value="car_auto">Car and Auto</option>
+                <option value="lending">Lending</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="cellphone">Cellphone</option>
+                <option value="utilities">Utilities</option>
+                <option value="kids">Kids</option>
+                <option value="transportation">Transportation</option>
+              </select> 
+              <label for="budgdet-amount">Budget Amount</label>
+              <input type="number" class="form-control" id="budget-amount" placeholder="Enter budget amount"/> 
+              <label for="priority">Budget Priority</label>
+              <div class="radio">
+                <label for="highest-pry"><input type="radio" name="priority" value="highest-pry"/>Highest</label>
+              </div>
+              <div class="radio">
+                <label for="high-pry"><input type="radio" name="priority" value="high-pry"/>High</label>
+              </div>
+              <div class="radio">
+                <label for="medium-pry"><input type="radio" name="priority" value="medium-pry"/>Medium</label>
+              </div>
+              <div class="radio">
+                <label for="low-pry"><input type="radio" name="priority" value="low-pry"/>Low</label>
+              </div>
+              <div class="radio">
+                <label for="lowest-pry"><input type="radio" name="priority" value="lowest-pry"/>Lowest</label>
+              </div>
+
+            </div>            
+              <div>
+                <button type="button" class="btn btn-default">Save</button>
+            </div>
+          </form> 
+        </div>
+      </div>
+    
+  
+      <!--the script-->
+    <script>
+      var myDataRef = new Firebase('https://mybudget1.firebaseio.com/');
+      $('#messageInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $('#nameInput').val();
+          var text = $('#messageInput').val();
+          myDataRef.push({name: name, text: text});
+          $('#messageInput').val('');
+        }
+      });
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+    displayChatMessage(message.name, message.text);
+      });
+      function displayChatMessage(name, text) {
+        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+    </script>  
+
+  </body>
+  
+</html>

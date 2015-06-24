@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>My Budget App</title>
+    <link href='css/bootstrap.css' rel='stylesheet'>
+    <script src='firebase.js'></script>
+    <script src="jquery-1.11.3.js"></script>
+  </head>
+  <body>
+
+    <!--The Nav Bar-->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><b>My</b>Budget</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="row">
+      <div class="col-sm-3 col-md-2  sidebar">
+        <ul class="nav nav-sidebar">
+          <li><a href="#">Overview</a></li>
+          <li><a href="budget.html">Budgets</a></li>
+          <li><a href="transaction.html">Transactions</a></li>
+          <li class="active"><a href="accounts.html">Accounts</a></li>
+        </ul>
+      </div>
+   
+    
+       
+      
+        
+          
+        <div class="col-md-4">
+          <div><h3>Account Information</h3></div>
+          <form role="form">
+            <div class="form-group">
+              <label for="account-type">Account Type</label>
+              <select class="form-control" id="account-type" placeholder="Choose an account type">
+                <option value="cash">Cash</option>
+                <option value="credit-card">Credit</option>
+              </select> 
+              <label for="account-name">Account Name</label>
+              <input type="text" class="form-control" id="account-name" placeholder="Enter account name"/> 
+              <label for="account-desc">Account Description</label>
+              <input type="text" class="form-control" id="account-desc" placeholder="Enter account description"/> 
+              <label for="account-bal">Account Balance</label>
+              <input type="number" class="form-control" id="account-bal" placeholder="Enter account balance"/> 
+            </div>            
+              <div>
+                <button type="button" class="btn btn-default" id="button1">Save</button>
+            </div>
+          </form>
+        </div>
+
+
+        <!--the current accounts-->
+        <div class="col-md-4 col-md-offset-1">
+          <div><h3>Your Accounts </h3></div>
+            <div class="list-group" >
+              <a href="#" class="list-group-item disabled">First item</a>
+              <a href="#" class="list-group-item">Second item</a>
+              <a href="#" class="list-group-item">Third item</a>
+            </div>
+            <div id="your-accounts"></div>
+        </div>
+
+
+
+      </div>
+      
+
+     <!--the script-->
+    <script>
+      var myDataRef = new Firebase('https://mybudget1.firebaseio.com/');
+      <!--SAVING THE DATA TO FIREBASE-->
+      jQuery('#button1').click(function () {
+          var accountType=$('#account-type').val();
+          var accountName=$('#account-name').val();
+          var accountDesc=$('#account-desc').val();
+          var accountBal=$('#account-bal').val();
+          var account = {account_type: accountType, account_name: accountName, account_desc: accountDesc, account_bal: accountBal};
+          myDataRef.child('accounts').push(account);
+          alert('Button 1 was clicked');
+      });
+   
+      // myDataRef.on("value", function(snapshot) {
+      //     console.log(snapshot.val());
+      //   }, function (errorObject) {
+      //   console.log("The read failed: " + errorObject.code);
+      //   });
+      
+
+      
+
+    </script>  
+
+
+  </body>
+  <script>
+    //var myDataRef = new Firebase('https://nhb1hkkhpli.firebaseio-demo.com/');
+  </script>
+</html>
