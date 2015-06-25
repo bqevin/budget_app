@@ -1,0 +1,33 @@
+.thesidebar{
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  height: 700px; 
+}
+
+.navbar-two{
+  margin-bottom: 0px;
+}
+
+.navbar-text{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 17px;
+	line-height: 1.42857143;
+	color:#333;
+}
+.sidebar-margin{
+	margin-top: 2px;
+}
+.body-padding{
+	padding-top:150px;
+}
+.img-google{
+	width:30px;
+}
+.btn-google{
+	background-color:rgb(220,53,34);
+	color: white;
+	margin-top: 50px;
+}
+.title-brand{
+	margin-left: 200px;
+}
