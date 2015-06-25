@@ -1,43 +1,73 @@
-.thesidebar{
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
-  height: 700px; 
+.thesidebar {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    height: 700px;
 }
 
-.navbar-two{
-  margin-bottom: 0px;
+.navbar-two {
+    margin-bottom: 0px;
 }
 
-.navbar-text{
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 17px;
-	line-height: 1.42857143;
-	color:#333;
+.navbar-text {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.42857143;
+    color: #333;
 }
-.sidebar-margin{
-	margin-top: 2px;
+
+.sidebar-margin {
+    margin-top: 2px;
 }
-.body-padding{
-	padding-top:150px;
+
+.body-padding {
+    padding-top: 120px;
 }
-.img-google{
-	width:30px;
+
+.img-google {
+    width: 30px;
 }
-.btn-google{
-	background-color:rgb(220,53,34);
-	color: white;
-	margin-top: 50px;
+
+.img-acc {
+    width: 60px;
 }
-.title-brand{
-	margin-left: 200px;
+
+.btn-google {
+    background-color: rgb(220, 53, 34);
+    color: white;
+    margin-top: 50px;
 }
-.div-format{
-	background-color:#d3d3d3;
-	padding:20px;
+
+.title-brand {
+    margin-left: 200px;
 }
-.spacing{
-	padding-top: 5px
-} 
-.text-big{
-	font-size: 20px;
+
+.div-format {
+    background-color: #d3d3d3;
+    padding: 20px;
+}
+
+.spacing {
+    padding-top: 5px
+}
+
+.text-big {
+    font-size: 20px;
+}
+
+.left-spacing {
+    margin-left: 8px;
+}
+
+.bottom-spacing {
+    margin-bottom: 80px;
+    margin-left: 25px;
+}
+
+.no-bullets {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+.display-type{
+    display: inline;
 }

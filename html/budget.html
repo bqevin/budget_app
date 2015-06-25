@@ -39,6 +39,8 @@
                 <h3>Budget Information<h3></div>
            <form role="form">
             <div class="form-group">
+              <label for="budget-name">Budget Name</label>
+              <input type="text" class="form-control" id="budget-name" placeholder="Enter budget name" />
               <label for="account-type">Take from account</label>
               <select class="form-control" id="account-type">
                 <option value="cash">Cash</option>
@@ -60,6 +62,8 @@
               </select> 
               <label for="budgdet-amount">Budget Amount</label>
               <input type="number" class="form-control" id="budget-amount" placeholder="Enter budget amount"/> 
+              <label for="budget-desc">Budget Notes</label>
+              <input type="text" class="form-control" id="budget-desc" placeholder="Enter budget notes" />
               <label for="priority">Budget Priority</label>
               <div class="radio">
                 <label for="highest-pry"><input type="radio" name="priority" value="1"/>Highest</label>
@@ -90,15 +94,10 @@
                 <h3>Your Budgets </h3></div>
             <div class="list-group" id="your-budgets">
             </div>
-        </div>    
+        </div>
+    </div>
+    <script src="../js/save-budget.js"></script>
+    <script src="../js/retrieve-budget.js"></script>
+</body>
 
-
-      </div>
-    
-  <script src="../js/save-budget.js"></script>
-  <script src="../js/retrieve-budget.js"></script>
-       
-
-  </body>
-  
 </html>

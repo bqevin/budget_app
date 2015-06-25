@@ -1,13 +1,17 @@
 jQuery('#saveBtn').click(function() {
+    var budgetName = $('#budget-name').val();
     var accountType = $('#account-type').val();
     var budgetMonth = $('#budget-month').val();
     var budgetType = $('#budget-type').val();
+    var budgetDesc = $('#budget-desc').val();
     var budgetAmount = $('#budget-amount').val();
     var budgetPriority = $("input:radio[name='priority']:checked").val();
     var budget = {
+        budget_name: budgetName,
         account_type: accountType,
         budget_month: budgetMonth,
         budget_type: budgetType,
+        budget_desc: budgetDesc,
         budget_amount: budgetAmount,
         budget_priority: budgetPriority
     };
