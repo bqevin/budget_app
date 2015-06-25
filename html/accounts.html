@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <title>My Budget App</title>
+    <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link href='../css/budget-theme.css' rel='stylesheet'>
+    <script src='../js/firebase.js'></script>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script src="../js/accounting.js"></script>
+</head>
+
+<body>
+    <!--The Nav Bar-->
+    <nav class="navbar navbar-default navbar-two">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><b>My</b>Budget</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--the rest of the body-->
+    <div class="row">
+        <div class="col-sm-3 col-md-2  sidebar thesidebar navbar-text sidebar-margin">
+            <ul class="nav nav-sidebar">
+                <li><a href="#">Overview</a></li>
+                <li><a href="budget.html">Budgets</a></li>
+                <li><a href="transaction.html">Transactions</a></li>
+                <li class="active"><a href="accounts.html">Accounts</a></li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <h3>New Account Information</h3></div>
+            <form role="form">
+                <div class="form-group">
+                    <label for="account-type">Account Type</label>
+                    <select class="form-control" id="account-type" placeholder="Choose an account type">
+                        <option value="cash">Cash</option>
+                        <option value="credit-card">Credit</option>
+                    </select>
+                    <label for="account-name">Account Name</label>
+                    <input type="text" class="form-control" id="account-name" placeholder="Enter account name" />
+                    <label for="account-desc">Account Description</label>
+                    <input type="text" class="form-control" id="account-desc" placeholder="Enter account description" />
+                    <label for="account-bal">Account Balance</label>
+                    <input type="number" class="form-control" id="account-bal" placeholder="Enter account balance" />
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default" id="saveBtn">Save</button>
+                </div>
+            </form>
+        </div>
+        <!--the current accounts-->
+        <div class="col-md-4 col-md-offset-1">
+            <div>
+                <h3>Your Accounts </h3></div>
+            <div class="list-group" id="your-accounts">
+            </div>
+        </div>
+        <div class="col-md-3 col-md-offset-1 " id="totalsDisplay">
+            <label for="ex3">
+                <h4><b>Cash :</b></h4></label>
+            <input class="form-control div-format text-big" id="cashTotal" type="text" disabled>
+            <label for="ex3">
+                <h4><b>Credit :</b></h4></label>
+            <input class="form-control div-format text-big" id="creditTotal" type="text" disabled>
+        </div>
+    </div>
+    
+
+    <script src="../js/save-account.js"></script>
+    <script src="../js/retrieve-account.js"></script>
+</body>
+
+</html>

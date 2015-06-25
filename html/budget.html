@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <title>My Budget App</title>
-    <link href='css/bootstrap.css' rel='stylesheet'>
-    <link href='css/budget-theme.css' rel='stylesheet'>
-    <script src='firebase.js'></script>
-    <script src="jquery-1.11.3.js"></script>
-  </head>
-  <body>
 
+<head>
+    <title>My Budget App</title>
+    <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link href='../css/budget-theme.css' rel='stylesheet'>
+    <script src='../js/firebase.js'></script>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script src="../js/accounting.js"></script>
+</head>
+
+<body>
     <!--The Nav Bar-->
     <nav class="navbar navbar-default navbar-two">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#"><b>My</b>Budget</a>
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><b>My</b>Budget</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-          </ul>
-        </div>
-      </div>
     </nav>
     <!--the rest of the body-->
     <div class="row">
-      <div class="col-sm-3 col-md-2  sidebar thesidebar navbar-text sidebar-margin">
-        <ul class="nav nav-sidebar">
-          <li><a href="#">Overview</a></li>
-          <li><a href="budget.html">Budgets</a></li>
-          <li><a href="transaction.html">Transactions</a></li>
-          <li class="active"><a href="accounts.html">Accounts</a></li>
-        </ul>
-      </div>
-      
-       
-        
+        <div class="col-sm-3 col-md-2  sidebar thesidebar navbar-text sidebar-margin">
+            <ul class="nav nav-sidebar">
+                <li><a href="#">Overview</a></li>
+                <li><a href="budget.html">Budgets</a></li>
+                <li><a href="transaction.html">Transactions</a></li>
+                <li class="active"><a href="accounts.html">Accounts</a></li>
+            </ul>
+        </div>
         <div class="col-md-4">
-          <div><h3>Budget Information<h3></div>
+            <div>
+                <h3>Budget Information<h3></div>
            <form role="form">
             <div class="form-group">
               <label for="account-type">Take from account</label>
@@ -44,7 +44,7 @@
                 <option value="cash">Cash</option>
                 <option value="credit-card">Card</option>
               </select> 
-              <label for="budgdet-month">Budget Month</label>
+              <label for="budget-month">Budget Month</label>
               <input type="month" class="form-control" id="budget-month" placeholder="Select budget month"/>
               <label for="budget-type">Budget Category</label>
               <select class="form-control" id="budget-type" placeholder="Choose an account type">
@@ -62,30 +62,41 @@
               <input type="number" class="form-control" id="budget-amount" placeholder="Enter budget amount"/> 
               <label for="priority">Budget Priority</label>
               <div class="radio">
-                <label for="highest-pry"><input type="radio" name="priority" value="highest-pry"/>Highest</label>
+                <label for="highest-pry"><input type="radio" name="priority" value="1"/>Highest</label>
               </div>
               <div class="radio">
-                <label for="high-pry"><input type="radio" name="priority" value="high-pry"/>High</label>
+                <label for="high-pry"><input type="radio" name="priority" value="2"/>High</label>
               </div>
               <div class="radio">
-                <label for="medium-pry"><input type="radio" name="priority" value="medium-pry"/>Medium</label>
+                <label for="medium-pry"><input type="radio" name="priority" value="3"/>Medium</label>
               </div>
               <div class="radio">
-                <label for="low-pry"><input type="radio" name="priority" value="low-pry"/>Low</label>
+                <label for="low-pry"><input type="radio" name="priority" value="4"/>Low</label>
               </div>
               <div class="radio">
-                <label for="lowest-pry"><input type="radio" name="priority" value="lowest-pry"/>Lowest</label>
+                <label for="5"><input type="radio" name="priority" value="lowest-pry"/>Lowest</label>
               </div>
 
             </div>            
               <div>
-                <button type="button" class="btn btn-default">Save</button>
+                <button type="button" class="btn btn-default" id="saveBtn">Save</button>
             </div>
           </form> 
         </div>
+
+
+      <div class="col-md-4 col-md-offset-1">
+            <div>
+                <h3>Your Budgets </h3></div>
+            <div class="list-group" id="your-budgets">
+            </div>
+        </div>    
+
+
       </div>
     
-  
+  <script src="../js/save-budget.js"></script>
+  <script src="../js/retrieve-budget.js"></script>
        
 
   </body>

@@ -31,3 +31,13 @@
 .title-brand{
 	margin-left: 200px;
 }
+.div-format{
+	background-color:#d3d3d3;
+	padding:20px;
+}
+.spacing{
+	padding-top: 5px
+} 
+.text-big{
+	font-size: 20px;
+}
