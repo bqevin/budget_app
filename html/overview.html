@@ -1,64 +1,42 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <title>My Budget App</title>
-    <link href='css/bootstrap.css' rel='stylesheet'>
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-  </head>
-  <body>
 
+<head>
+    <title>My Budget App</title>
+    <link href='../css/bootstrap.css' rel='stylesheet'>
+    <link href='../css/budget-theme.css' rel='stylesheet'>
+    <script src='../js/firebase.js'></script>
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script src="../js/accounting.js"></script>
+</head>
+
+<body>
     <!--The Nav Bar-->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#"><b>My</b>Budget</a>
-        </div>
-        <div>
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Page 1</a></li>
-            <li><a href="#">Page 2</a></li> 
-            <li><a href="#">Page 3</a></li> 
-          </ul>
-        </div>
-      </div>
-    </nav>
-      <div class="col-sm-3 col-md-2 sidebar">
-        <ul class="nav nav-sidebar">
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Budgets</a></li>
-          <li><a href="#">Transactions</a></li>
-          <li class="active"><a href="#">Accounts</a></li>
-        </ul>
-      </div>
-   
-    <div class="container">
-       
-      <div class="row">
-        <div class="col-md-4">
-          <form role="form">
-            <div class="form-group">
-              <label for="account-type">Account Type</label>
-              <select class="form-control" id="account-type" placeholder="Choose an account type">
-                <option value="cash">Cash</option>
-                <option value="credit-card">Card</option>
-              </select> 
-              <label for="account-name">Account Name</label>
-              <input type="text" class="form-control" id="account-name" placeholder="Enter account name"/> 
-              <label for="account-desc">Account Description</label>
-              <input type="text" class="form-control" id="account-name" placeholder="Enter account description"/> 
-              <label for="account-bal">Account Balance</label>
-              <input type="number" class="form-control" id="account-bal" placeholder="Enter account balance"/> 
-            </div>            
-              <div>
-                <button type="button" class="btn btn-default">Save</button>
+    <nav class="navbar navbar-default navbar-two">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><b>My</b>Budget</a>
             </div>
-          </form>
+             <div class="col-md-2 col-md-offset-8" style="padding-top:15px;">
+                <img id="user-image" class="user-image" >
+                <span class="span-name"><label id="user-name"><b></b></label></span>
+            </div>
         </div>
-      </div>
-    </div>
+    </nav>
+    <!--the rest of the body-->
+    <div class="row">
+        <div class="col-sm-3 col-md-2  sidebar thesidebar navbar-text sidebar-margin">
+            <ul class="nav nav-sidebar">
+                <li><a href="#">Overview</a></li>
+                <li><a href="budget.html">Budgets</a></li>
+                <li><a href="transaction.html">Transactions</a></li>
+                <li class="active"><a href="accounts.html">Accounts</a></li>
+            </ul>
+        </div>
+        
+
+
+       <script src="../js/overview-retrieve-data.js"></script>
   </body>
-  <script>
-    var myDataRef = new Firebase('https://nhb1hkkhpli.firebaseio-demo.com/');
-  </script>
+  
 </html>
